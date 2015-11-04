@@ -1,0 +1,54 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-09 16:30:02
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:14
+**************************************************************/
+
+class EligibilityDataDisplayHelper extends MasterHelper {
+
+	_viewClassName = 'EligibilityDataHelperDisplayView';
+	_hasLoader = true;
+
+	initialize : function () {
+		_super();
+		this['_entity'] = undefined;
+		this['_limit'] = undefined;
+		this['_parent'] = undefined;
+	}
+
+	public getParent : function () {
+		return this['_parent'];
+	}
+
+	public setParent : function (parent) {
+		this['_parent'] = parent;
+
+		return this;
+	}
+
+	public getLimit : function () {
+		return this['_limit'];
+	}
+
+	public setLimit : function (limit) {
+		this['_limit'] = limit;
+
+		return this;
+	}
+
+	public getEntity : function () {
+		return this['_entity'];
+	}
+
+	public setEntity : function (entity) {
+		this['_entity'] = entity;
+
+		return this.entity;
+	}
+}

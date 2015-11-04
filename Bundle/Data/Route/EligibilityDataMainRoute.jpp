@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:05:50
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:50:40
+**************************************************************/
+
+class EligibilityDataMainRoute extends LinkDataMainRoute {
+
+	name = 'eligibility';
+
+	baseName = 'Eligibility';
+	baseRoute = '{eligibilities}';
+	baseController = 'eligibility_data_main_controller';
+
+	paramName = 'eligibility_id';
+
+}

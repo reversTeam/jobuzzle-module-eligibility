@@ -1,0 +1,27 @@
+###############################################################
+#     ####         #                               #          # Jobuzzle - Copyright All rights reserved
+#     ####         #                               #          #
+#       ##  #####  ######  #     # ####### ####### #  #####   # @Author: revers
+#       ## #     # #     # #     #      #       #  # #     #  #
+#       ## #     # #     # #     #     #       #   # #     #  # @Date:   2015-09-30 12:53:28
+#       ## #     # #     # #     #    #       #    # #     #  #
+#       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
+#  ####### #     # #     # #     #  #       #      # #        #
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-03 17:38:02
+###############################################################
+
+invokables:
+	eligibility_data_timeline_template	: Data/Template/EligibilityDataTimelineTemplate
+
+	eligibility_data_search_template		: Data/Template/EligibilityDataSearchTemplate
+	eligibility_data_view_template		: Data/Template/EligibilityDataViewTemplate
+	eligibility_data_create_template		: Data/Template/EligibilityDataCreateTemplate
+	eligibility_data_update_template		: Data/Template/EligibilityDataUpdateTemplate
+	eligibility_data_delete_template		: Data/Template/EligibilityDataDeleteTemplate
+
+shared:
+	eligibility_data_search_template		: true
+	eligibility_data_view_template		: true
+	eligibility_data_create_template		: true
+	eligibility_data_update_template		: true
+	eligibility_data_delete_template		: true

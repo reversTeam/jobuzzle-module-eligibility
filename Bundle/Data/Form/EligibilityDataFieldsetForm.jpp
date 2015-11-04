@@ -1,0 +1,64 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:03:28
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:15
+**************************************************************/
+
+class EligibilityDataFieldsetForm extends LinkDataFieldsetForm {
+
+	public _formName = 'Eligibility';
+	public _createFormName = 'eligibility_data_create_form';
+	public _searchFormName = 'eligibility_data_search_form';
+	public _editFormName = 'eligibility_data_edit_form';
+
+	public _levelDisplay = undefined;
+
+	public _levelInput = undefined;
+
+	public getElementsDisplay : function () {
+		var elementsDisplay = _super();
+
+		elementsDisplay['level'] = this.getLevelDisplay();
+
+		return elementsDisplay;
+	}
+
+	public getElementsInput : function () {
+		var elementsInput = _super();
+
+		elementsInput['level'] = this.getLevelInput();
+
+		return elementsInput;
+	}
+
+	public getLevelDisplay : function () {
+		if (!this['_levelDisplay']) {
+			this['_levelDisplay'] = {};
+			this['_levelDisplay']['type'] = 'Text';
+			this['_levelDisplay']['label'] = 'form.input.eligibility.level';
+		}
+		return this['_levelDisplay'];
+	}
+
+	public getLevelInput : function () {
+		if (this['_levelInput'] == undefined) {
+			this['_levelInput'] = {};
+
+			this['_levelInput']['required'] = false;
+
+			this['_levelInput']['filters'] = [];
+			this['_levelInput']['filters'][0] = {}
+			this['_levelInput']['filters'][0]['name'] = 'Trim';
+			this['_levelInput']['filters'][1] = {}
+			this['_levelInput']['filters'][1]['name'] = 'Int';
+		}
+		return this['_levelInput'];
+	}
+
+}

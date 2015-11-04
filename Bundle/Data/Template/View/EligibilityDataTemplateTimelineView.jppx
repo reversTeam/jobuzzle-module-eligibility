@@ -1,0 +1,35 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:12:41
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:07
+**************************************************************/
+
+class EligibilityDataTemplateTimelineView extends LinkDataTemplateTimelineView {
+
+	public display : function () {
+		var entity = this.state['entity'];
+		var level = Math.floor(entity.getLevel() / 100);
+		var percent = entity.getLevel() % 100;
+		var style = {
+			'width' : percent +'%'
+		};
+		return <div className="eligibility timeline view">
+			<div className="levelInfo">
+				<span className="label">{entity.getTarget().getName()}</span>
+				<span className="level">{level}</span>
+			</div>
+			<div className="test"></div>
+			<div className="percentBar">
+				<div className="progressBar" style={style}></div>
+				<span className="progressValue">{percent + '%'}</span>
+			</div>
+		</div>;
+	}
+
+}
