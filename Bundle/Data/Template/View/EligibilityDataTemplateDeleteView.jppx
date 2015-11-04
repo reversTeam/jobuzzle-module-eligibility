@@ -1,0 +1,22 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:12:19
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:08
+**************************************************************/
+
+class EligibilityDataTemplateDeleteView extends LinkDataTemplateDeleteView {
+
+	public _class = 'eligibility';
+	public _elementType = 'Eligibility';
+
+	public display : function () {
+		return <div>Delete Skill Link</div>;
+	}
+
+}

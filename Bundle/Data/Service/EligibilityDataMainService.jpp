@@ -1,0 +1,33 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:06:29
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:12
+**************************************************************/
+
+class EligibilityDataMainService extends LinkDataMainService {
+
+	_type = 'eligibility';
+	_title = 'Eligibilitys';
+	_entityType = 'Eligibility';
+	_fieldsetName = 'eligibility_data_fieldset_form';
+
+	getTitleParamsView : function (entity) {
+		if (entity)
+			return { url : entity.getId() };
+		return { url : '' };
+	}
+
+	public getElementEntity : function (id) {
+		var router = serviceLocator.get('Router');
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+
+		store.request(router.build('/eligibility/view', { 'eligibility_id' : id }));
+	}
+
+}

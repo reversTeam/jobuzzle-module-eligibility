@@ -1,0 +1,68 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-09 16:36:15
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:40:51
+**************************************************************/
+
+class EligibilityDataHelperDisplayView extends MasterHelperView {
+
+	initialState : function () {
+		var states = {};
+
+		states['entities'] = this.getFilters();
+
+		return states;
+	}
+
+	getFilters = function () {
+		this._template.setReady(false);
+		var self = this;
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+		var router = serviceLocator.get('Router');
+		var eligibilityCollection = store.getAll('Eligibility');
+		var entity = this._template.getEntity();
+
+		var eligibility = eligibilityCollection.filterByParentEntityRoute(entity);
+
+		if (!Object.keys(eligibility).length) {
+			store.request(router.entityRouteForApi(entity, 'eligibility'), {}, function (datas) {
+				self._template.setReady(true);
+				eligibility = eligibilityCollection.filterByParentEntityRoute(entity);
+				self.setState({ entities : eligibility });
+			});
+		} else {
+			this._template.setReady(true);
+		}
+
+		return eligibility;
+	}
+
+	displayEligibilitys : function (eligibilitys) {
+		var result = [];
+		var limit = this._template.getLimit();
+		var n = 0;
+
+		for (var i in eligibilitys) {
+			var eligibility = eligibilitys[i];
+			if (!eligibility.getTarget())
+				continue ;
+			result.push(eligibility.displayTimeline());
+		}
+
+		return result;
+	}
+ 
+	display : function () {
+		var entities = this.state['entities'];
+
+		return <div className="eligibilityContent">
+			{this.displayEligibilitys(entities)}
+		</div>
+	}
+}

@@ -1,0 +1,19 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:08:16
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:11
+**************************************************************/
+
+class EligibilityDataDeleteTemplate extends LinkDataDeleteTemplate {
+
+	public _viewClassName = 'EligibilityDataTemplateDeleteView';
+	public _type = 'Eligibility';
+	public _route = 'eligibility';
+
+}

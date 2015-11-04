@@ -1,0 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:08:44
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-03 17:38:09
+**************************************************************/
+
+class EligibilityDataUpdateTemplate extends LinkDataUpdateTemplate {
+
+	public _viewClassName = 'EligibilityDataTemplateUpdateView';
+	public _serviceName = 'eligibility_data_main_service';
+	public _route = 'eligibility';
+	public _type = 'Eligibility';
+
+}
