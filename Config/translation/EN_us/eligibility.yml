@@ -7,9 +7,11 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-03 17:38:33
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-09 14:15:22
 ###############################################################
 
-Eligibility: Eligibility
-view: '{{url}}'
-update: '{{url}}'
+page:
+	title:
+		Eligibility: Eligibility
+		view: '{{url}}'
+		update: '{{url}}'
